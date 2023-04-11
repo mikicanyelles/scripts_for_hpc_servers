@@ -23,5 +23,8 @@ if [ -z "$2" ];
 
     fi
 
+CURRENT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"
+
+echo "PATH=\$PATH:$CURRENT_PATH" >> ~/.bashrc
 
 
