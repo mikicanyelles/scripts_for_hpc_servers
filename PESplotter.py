@@ -5,8 +5,7 @@ from sys import argv, exit
 
 import pandas as pd
 
-#import plotext.plot as plx
-import terminalplot as tp
+import plotext as pt
 import matplotlib.pyplot as plt
 
 
@@ -147,7 +146,7 @@ def parse_file(file_name):
     return x, y, x_key, y_key
 
 def plot_energy_plx(x,y):
-    tp.plot(x,y)
+    pt.plot(x,y)
 
 def plot_energy_mtl(x, y, x_key, y_key):
 

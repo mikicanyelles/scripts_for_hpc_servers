@@ -1,7 +1,7 @@
 #!{{python_route}}
 
 import matplotlib.pyplot as plt
-import terminalplot as tp
+import plotext as pt
 from os import listdir, environ
 from sys import argv,exit
 
@@ -124,7 +124,7 @@ def plot_energy_mtl(energy):
     plt.show()
 
 def plot_energy_tp(energy):
-    tp.plot(energy[0], energy[1])
+    pt.plot(energy[0], energy[1])
 
 def main():
     file_name = input_file()
