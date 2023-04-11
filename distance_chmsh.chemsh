@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# USAGE distance_chmsh.chemsh file.c at_1 at_2
+
+CHEMSH={{chemshell_dir}}
+
+C=$1
+
+echo "set distance [ interatomic_distance coords=$C i=$2 j=$3]" > .chemsh
+echo 'set distance_ang [ expr { $distance * 0.5291772 } ]' >> .chemsh
+echo 'puts $distance_ang' >> .chemsh
+echo 'exit' >> .chemsh
+
+$CHEMSH .chemsh
+
+rm -f .chemsh

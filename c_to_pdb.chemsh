@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# USAGE: c_to_pdb.chemsh file.pdb file.c
+
+CHEMSH={{chemshell_dir}}
+
+PDB=$1
+C=`echo "$2" | cut -d'.' -f1`
+
+
+echo "read_pdb file=$PDB coords=dummy.coords" > .chemsh
+echo "write_pdb file=${C}.pdb coords=${C}.c" >> .chemsh
+
+$CHEMSH .chemsh
+
+rm .chemsh
